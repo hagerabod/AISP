@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>صفحة بسيطة — تصميم جديد</title>
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#f8fafc; /* light card */
+      --accent1:#7c3aed; /* purple */
+      --accent2:#06b6d4; /* teal */
+    }
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+    html,body{height:100%}
+    body{background:linear-gradient(180deg,var(--bg) 0%, #0b1220 60%);color:var(--card);display:flex;align-items:center;justify-content:center;padding:32px}
+
+    /* Page container */
+    .card{
+      width:min(980px,96%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:18px;
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:22px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(255,255,255,0.04);
+      align-items:start;
+    }
+
+    /* Left content */
+    .hero h1{font-size:28px;margin-bottom:12px}
+    .hero p{color:rgba(248,250,252,0.8);line-height:1.6}
+
+    .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .feature{background:linear-gradient(135deg,var(--accent1),var(--accent2));padding:10px 14px;border-radius:12px;color:white;font-weight:600;box-shadow:0 6px 18px rgba(12,10,30,0.45)}
+
+    /* Right panel */
+    .profile{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+    }
+    .avatar{width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent2),var(--accent1));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px;color:#072029;margin-bottom:12px}
+    .meta{color:rgba(248,250,252,0.85);font-weight:600}
+    .btn{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.08);cursor:pointer}
+
+    /* small card list */
+    .list{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+    .item{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-weight:600}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      .avatar{margin:auto}
+    }
+
+    /* tiny playful animation */
+    .hero h1::after{content:'';display:inline-block;width:10px;height:10px;margin-inline-start:8px;border-radius:50%;background:linear-gradient(90deg,var(--accent1),var(--accent2));transform:translateY(4px);animation:bounce 1.8s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(4px)}50%{transform:translateY(-6px)}}
+
+  </style>
+</head>
+<body>
+  <main class="card" dir="rtl">
+    <section class="hero">
+      <h1>أهلًا بيك! صفحة بسيطة ومميزة</h1>
+      <p>دي صفحة هتدي انطباع نظيف وحديث — مناسبة لعرض مشروع صغير، سيرة ذاتية مبسطة، أو صفحة هبوط لمشروعك. التصميم غير متكرر وبيستخدم ألوان وتدرجات جذابة.</p>
+
+      <div class="features" aria-hidden>
+        <span class="feature">تصميم نظيف</span>
+        <span class="feature">متجاوبة</span>
+        <span class="feature">بدون مكتبات</span>
+      </div>
+
+      <div style="margin-top:20px;">
+        <h3 style="margin-bottom:8px;color:rgba(248,250,252,0.9)">وصف مختصر</h3>
+        <p style="color:rgba(248,250,252,0.75)">اكتبي هنا عبارة قصيرة عن مشروعك أو عن نفسك. لو حابة أعدّل الألوان أو أضيف أي عنصر، قوليلي هعمله فورًا.</p>
+      </div>
+    </section>
+
+    <aside class="profile">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar">HB</div>
+        <div>
+          <div class="meta">HAGER</div>
+          <div style="color:rgba(248,250,252,0.7);font-size:13px;margin-top:6px">مطور/ة ويب مبتدئ/ة — محبة لتصاميم بسيطة</div>
+        </div>
+      </div>
+
+      <button class="btn" onclick="alert('شكراً! تواصلي لو عايزة تغييرات :)')">تواصل</button>
+
+      <div class="list">
+        <div class="item"><div>مشروع تجريبي</div><div class="tag">HTML</div></div>
+        <div class="item"><div>قالب صفحة</div><div class="tag">CSS</div></div>
+        <div class="item"><div>قصة قصيرة</div><div class="tag">Design</div></div>
+      </div>
+
+    </aside>
+
+  </main>
+</body>
